@@ -1,0 +1,190 @@
+            body{background: white}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+				
+			#outer{
+				/* 设置宽高 */
+				width: 660px;
+				height: 424px;
+			    /* margin: 0px 0px; */
+			    float:left;
+				background-color: greenyellow;
+				padding: 10px 0;
+				/* 开启相对定位 */
+				position: relative;
+				/* 裁剪溢出的内容 */
+				overflow: hidden;
+				
+			}
+			#imgList{
+				/* 去除项目符号 */
+				list-style: none;
+				/* 设置ul宽度 */
+				/* width: 3300px; */
+				/* 开启绝对定位 */
+				position: absolute;
+				/* 设置偏移量 */
+				/* 每向左移动660px，就会显示下一张 */
+				left: -660px;
+			}
+			#imgList li{
+				/* 设置浮动 */
+				float:left ;
+				/* 设置左右外边距 */
+				margin:0 10px ;
+			}
+			/* 设置导航按钮 */
+			#navDiv{
+				/* 开启绝对定位 */
+				position: absolute;
+				/* 设置位置 */
+				top: 500px;
+				/* 设置left值 
+				outer 宽度660px
+				navDiv 宽度25*5=125
+				        （660-125）/2=267.5
+				*/
+			   left: 500px;
+			}
+			#navDiv a{
+				float: left;/* //设置超链接浮动 */
+				width: 15px;
+				height: 15px;
+				background: red;
+				/* 左右外边距 */
+				
+			    margin: 0 5px; 
+				/* 设置透明 */
+				opacity: 0.5;
+				/* 兼容IE8透明 */
+				filter: alpha(opacity=50);
+			}
+			/* 设置鼠标移入的效果 */
+			#navDiv a:hover{
+				background-color: black;
+			}
+			#box{
+			    width: 100%;
+		        margin: 30px auto;
+		        font-family: 'Microsoft YaHei';
+		        font-size: 14px;
+			}
+			input{
+		        width: 87.5%;
+		        border: 1px solid #e2e2e2;
+		        height: 30px;
+		        float: left;
+		        background-image: url(logo/reserch.png);
+		        background-repeat: no-repeat;
+		        background-size: 25px;
+		        background-position:5px center;
+		        padding:0 0 0 40px;
+		    }
+		    #search{
+		        width: 78px;
+		        height: 32px;
+		        float: right;
+		        background: skyblue;
+		        color: white;
+		        text-align: center;
+		        line-height: 32px;
+		        cursor: pointer;
+		    }
+		    #nav{ 
+				height:90px; 
+		        background-color:orange;
+		    }
+           .nav li{ 
+			   list-style-type:none;
+			   width:14%; 
+			   float:left; 
+			   text-align:center; 
+			   line-height:16px; 
+			   font-size:16px;
+			   position: relative;
+           }
+           .nav li a{
+			   display: block;
+			   font: bold 12px/20px sans-serif;
+			   padding: 10px 25px;
+			   text-align: center;
+			   text-decoration: none;
+			   color: white;
+           }
+           .nav li img{
+			   width:30px;
+			   height:30px;  
+           }
+		   .nav li:hover a {
+			   color:#fff;
+	        }
+		     
+		   #submenu {
+			   left: 0;
+			   opacity: 0;
+			   position: absolute;
+			   top: 35px;
+			   visibility: hidden;
+			   z-index: 1;
+		}
+		li:hover ul#submenu {
+			opacity: 1;
+			top: 70px;	/* adjust this as per top nav padding top & bottom comes */
+			visibility: visible;
+		}
+		#submenu li {
+			float: none;
+			width: 100%;
+		}
+		#submenu a:hover {
+			background: #DF4B05;
+		}
+		#submenu a {
+			background-color:#000000;
+		}
+		h1{
+		text-align: center;
+		/* color:white; */
+		}
+        .hot li {
+			float: left;
+			display: inline;
+			margin: 5px;
+			}
+		.hot li img{
+			width: 120px;
+			height: 74px;
+		}
+		.toplist img{
+		    width: 15px;
+		    height: 15px;
+		}
+		.dztj{
+		    position:fixed;
+		    top:620px;
+		}
+		.dztj img{
+		    width: 15px;
+		    height: 15px;
+		}
+		.tuijian {
+		    position:fixed;
+		    top:640px;
+		}
+		.back{
+		   /*  background:url(logo/舌尖.jpg) no-repeat left top; */
+		    width: 100%;
+		    height: 100%;
+		    position:fixed;
+		    top:770px;
+		    color:white;
+		    font-size: 20px;
+		}
+		.back ul img{
+		    width: 50px;
+		    height: 50px;
+		}
+
+		

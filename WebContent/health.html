@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>zym餐饮公司</title>
+<link type="text/css" rel="stylesheet" href="css/index.css">
+		<script type="text/javascript">
+			window.onload=function(){
+				//设置imgList宽度
+				//获取imgList
+				var imgList=document.getElementById("imgList");
+				//获取页面中所有的img 标签
+				var imgArr=document.getElementById("imgList").getElementsByTagName("img");
+				//设置imgList宽度
+				imgList.style.width=660*imgArr.length+"px";
+				/* 设置导航按钮居中 */
+				//获取navDiv
+				var navDiv=document.getElementById("navDiv");
+				//获取outer
+				var outer=document.getElementById("outer");
+				// 设置navDiv的left值
+				navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+"px";
+				
+				//默认显示图片的索引
+				var index=0;
+				//获取所有的a
+				var allA=document.getElementById("navDiv").getElementsByTagName("a");
+				//设置默认选中的效果
+				allA[index].style.backgroundColor="orange";
+				/* 
+				 点击超链接显示图片
+				 */
+				//为所有的超链接绑定单击响应函数
+				for(i=0;i<allA.length;i++){
+					//为每一个超链接添加一个num属性
+					allA[i].num=i;
+					allA[i].onclick=function(){
+						
+						//关闭自动切换的定时器
+						clearInterval(timer);
+						//获取点击超链接的索引,并将其设置为index
+						// alert(this.num);
+						index=this.num;
+						//切换图片
+						/* 第一张索引为0，left为0
+						   第二张索引为1，left为-660
+						    第三张索引为2，left为-660*2
+						 */
+						/* imgList.style.left=-660*index+"px";	 */
+						setA();
+						//使用move来切换图片
+						move(imgList,"left",-660*index,20,function(){
+							//动画执行完毕,开启自动切换
+							autoChange();
+							
+						});
+					};
+				}
+				
+				//自动切换图片
+				autoChange();
+				
+				//创建一个方法,用来设置选中的a
+				/* function setA(){
+					for(var i=0;i<allA.length;i++){
+						allA[i].style.backgroundColor="";
+					}
+					//将选中的a 设置为黑色
+					allA[index].style.backgroundColor="#000000";
+				}; */
+				function setA(){
+					if(index>=imgArr.length-1){
+						//将index设为0
+						index=0;
+						
+						//此时显示的是最后一张图片,而最后一张图片和第一张一模一样
+						//通过css将最后一张切换成第一张
+						imgList.style.left=0;
+					}
+					for(var i=0;i<allA.length;i++){
+						allA[i].style.backgroundColor="";
+					}
+					//将选中的a 设置为黑色
+					allA[index].style.backgroundColor="orange";
+				};
+				
+				//定义自动切换定时器的标识
+				var timer;
+				//创建一个函数,用来开启自动切换图片
+				function autoChange(){
+					//开启一个定时器,用于定时切换图片
+					timer=setInterval(function(){
+						
+						//使索引自增
+						index++;
+						
+						//判断index值
+						index %=imgArr.length;
+						
+						//执行动画切换图片
+						move(imgList,"left",-660*index,20,function(){
+							//设置导航按钮
+							setA();
+						});
+						
+					},2000);
+				}
+			};
+			
+		</script>
+		<!-- 引入工具file:///E:/HBuilder/定时调用/tools.js -->
+		<script type="text/javascript" src="js/tools.js"></script>
+    <style type="text/css">
+
+        .box ul{
+            margin:0;
+            padding:0;
+        }
+        p{
+            margin:0;
+            padding:0;
+            font-weight:bold;  /*加粗*/
+        }
+        .box ul li{
+            list-style:none;
+            margin-left:20px;
+            margin-bottom:12px;
+            line-height:24px;
+            font-size:14px;
+        }
+
+        .box{
+            width:100%;
+            float:left;
+        }
+        .box .img{float:left;}
+        .box .img img{width:300px;height:180px;}
+        a{
+            color: black;
+            /*text-decoration:none;*/
+        }
+        a:hover{
+            color:sandybrown;
+        }
+        .body_footer{width:100%; height:51px; background-color: gray; position:fixed;top:1500px;}
+        .body_footer ul{width:100%;}
+        .body_footer ul li a{width:100%; height:46px; display:block; padding-top:0px;text-decoration:none;}
+        .body_footer ul li a:hover { color:#ff0000;}
+        .body_footer ul li dl{width:auto; margin:0 auto; text-align:left;}
+        .body_footer ul li dt{width:100%; height:20px;font-size:20px; color:white; line-height:20px;  }
+        .body_footer img{width: 30px;height:30px;}
+    </style>
+
+
+    <script type="text/javascript">
+        var curIndex=0;
+        //时间间隔(单位毫秒)，每1000毫秒显示一张，数组共有5张图片放在images文件夹下。
+        var timeInterval=1000;
+        //食疗养生图片切换
+        var arr1=new Array();
+        arr1[0]="logo/乌米饭.jpg";
+        arr1[1]="logo/小龙虾.jpg";
+        arr1[2]="logo/三文鱼薯片沙拉.jpg";
+        arr1[3]="logo/img/4.jpg";
+        arr1[4]="logo/热菜/糖醋排骨.jpg";
+        setInterval(changeImg1,timeInterval);
+        function changeImg1()
+        {
+            var obj1=document.getElementById("obj1");
+            if (curIndex==arr1.length-1)
+            {
+                curIndex=0;
+            }
+            else
+            {
+                curIndex+=1;
+            }
+            obj1.src=arr1[curIndex];
+        }
+
+        //健康资讯图片切换
+        var arr2=new Array();
+        arr2[0]="logo/Birthday-Cake.png";
+        arr2[1]="logo/蛋糕甜品/酸奶天使蛋糕.jpg";
+        arr2[2]="logo/img/3.jpg";
+        arr2[3]="logo/热菜/咸蛋酿冬瓜.jpg";
+        arr2[4]="logo/蛋糕甜品/梦龙蛋糕卷.jpg";
+        setInterval(changeImg2,timeInterval);
+        function changeImg2()
+        {
+            var obj2=document.getElementById("obj2");
+            if (curIndex==arr2.length-1)
+            {
+                curIndex=0;
+            }
+            else
+            {
+                curIndex+=1;
+            }
+            obj2.src=arr2[curIndex];
+        }
+
+        //饮食健康图片切换
+        var arr3=new Array();
+        arr3[0]="logo/饮品/清甜芝香南瓜粥.jpg";
+        arr3[1]="logo/主食/珍珠丸子.jpg";
+        arr3[2]="logo/主食/奶香玉米窝窝头.jpg";
+        arr3[3]="logo/热菜/黑椒牛排.jpg";
+        arr3[4]="logo/热菜/罗汉大虾.jpg";
+        setInterval(changeImg3,timeInterval);
+        function changeImg3()
+        {
+            var obj3=document.getElementById("obj3");
+            if (curIndex==arr1.length-1)
+            {
+                curIndex=0;
+            }
+            else
+            {
+                curIndex+=1;
+            }
+            obj3.src=arr3[curIndex];
+        }
+
+
+    </script>
+</head>
+
+
+<body>
+<div>
+<h1>欢迎来到zym餐饮公司</h1>
+<!-- <img src="logo/zym餐饮店.png"/> -->
+
+</div>
+<div class="trip" id="nav">
+			<ul class="nav">
+				<li><a href="about.html"><img src="logo/关于我们.png"><br>关于我们</a></li>
+				<li><a href="new.html"><img src="logo/新品.png"><br>新品上市</a></li>
+				<li><a href="health.html"><img src="logo/健康.png"><br>饮食健康</a></li>
+				<li><a href="order.html"><img src="logo/点餐.png"><br>开始点餐</a></li>
+				<li><a href="index.html"><img src="logo/会员.png"><br>会员专区</a>
+				<ul id="submenu">
+                    <li><a href="login.jsp">登录</a></li>
+                    <li><a href="vip.html">注册</a></li>
+                </ul>
+				</li>
+				<li><a href="adminlogin.jsp"><img src="logo/管理员.png"><br>管理员登录</a></li>
+				<li><a href="content.html"><img src="logo/留言.png"><br>留言板</a></li>
+			</ul>
+		</div>
+<div><img src="logo/content.jpg" style="width: 1000px;height: auto;"/></div>
+<div class="box" >
+    <p>食疗养生</p>
+    <div class="img"><img id="obj1" src="logo/乌米饭.jpg"></div>
+    <ul>
+        <li><a href="https://www.fancai.com/shiliao/437760/" target="_blank">鸭子怎么做，我来告诉你</a></li>
+        <li><a href="https://www.fancai.com/shiliao/437759/">没有烤箱怎么做蛋挞？这是一部悬疑美食</a></li>
+        <li><a href="https://www.fancai.com/shiliao/437758/">厨房技巧之水豆腐怎么做好吃呢</a></li>
+        <li><a href="https://www.fancai.com/shiliao/437757/">坚持减肥吗，一起来看看</a></li>
+        <li><a href="https://www.fancai.com/shiliao/437756/">美味水果之百香果籽怎么吃</a></li>
+    </ul>
+    
+</div>
+<div class="box" >
+    <p>健康资讯</p>
+    <div class="img"><img id="obj2" src="logo/Birthday-Cake.png" ></div>
+    <ul>
+        <li><a href="https://www.fancai.com/health/423775/">山楂和陈皮能一起喝吗</a></li>
+        <li><a href="https://www.fancai.com/health/423774/">五种食物等价运动消耗表</a></li>
+        <li><a href="https://www.fancai.com/health/423773/">山楂和大枣能一起吃吗</a></li>
+        <li><a href="https://www.fancai.com/health/423772/">海螵蛸可以美白牙齿吗</a></li>
+        <li><a href="https://www.fancai.com/health/423771/">山楂和苹果能一起煮吗</a></li>
+    </ul>
+</div>
+<div class="box" >
+    <p>饮食健康</p>
+    <div class="img"><img id="obj3" src="logo/饮品/清甜芝香南瓜粥.jpg" ></div>
+    <ul>
+        <li><a href="https://www.fancai.com/yinshi/437269/">降脂饮食有助于缓解抑郁症状</a></li>
+        <li><a href="https://www.fancai.com/yinshi/437257/">小儿腹泻，苹果煮熟吃</a></li>
+        <li><a href="https://www.fancai.com/yinshi/437256/">辛夷花煲肉缓解过敏性鼻炎</a></li>
+        <li><a href="hhttps://www.fancai.com/yinshi/437177/">坐月子可以洗头吗，坐月子应该注意什么</a></li>
+        <li><a href="hhttps://www.fancai.com/yinshi/437010/">孕期饮食不均衡或导致孩子得多动症</a></li>
+    </ul>
+</div>
+
+<div class="body_footer">
+    <ul>
+        <li>
+            <a href="index.html">
+                <dl>
+                    <dt><img alt="返回首页" src="logo/zym餐饮店.png">返回首页</dt>
+                    <!--<dd>返回首页</dd>-->
+                </dl>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+

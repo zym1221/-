@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>zym餐饮公司</title>
+<link type="text/css" rel="stylesheet" href="css/index.css">
+		<script type="text/javascript">
+			window.onload=function(){
+				//设置imgList宽度
+				//获取imgList
+				var imgList=document.getElementById("imgList");
+				//获取页面中所有的img 标签
+				var imgArr=document.getElementById("imgList").getElementsByTagName("img");
+				//设置imgList宽度
+				imgList.style.width=660*imgArr.length+"px";
+				/* 设置导航按钮居中 */
+				//获取navDiv
+				var navDiv=document.getElementById("navDiv");
+				//获取outer
+				var outer=document.getElementById("outer");
+				// 设置navDiv的left值
+				navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+"px";
+				
+				//默认显示图片的索引
+				var index=0;
+				//获取所有的a
+				var allA=document.getElementById("navDiv").getElementsByTagName("a");
+				//设置默认选中的效果
+				allA[index].style.backgroundColor="orange";
+				/* 
+				 点击超链接显示图片
+				 */
+				//为所有的超链接绑定单击响应函数
+				for(i=0;i<allA.length;i++){
+					//为每一个超链接添加一个num属性
+					allA[i].num=i;
+					allA[i].onclick=function(){
+						
+						//关闭自动切换的定时器
+						clearInterval(timer);
+						//获取点击超链接的索引,并将其设置为index
+						// alert(this.num);
+						index=this.num;
+						//切换图片
+						/* 第一张索引为0，left为0
+						   第二张索引为1，left为-660
+						    第三张索引为2，left为-660*2
+						 */
+						/* imgList.style.left=-660*index+"px";	 */
+						setA();
+						//使用move来切换图片
+						move(imgList,"left",-660*index,20,function(){
+							//动画执行完毕,开启自动切换
+							autoChange();
+							
+						});
+					};
+				}
+				
+				//自动切换图片
+				autoChange();
+				
+				//创建一个方法,用来设置选中的a
+				/* function setA(){
+					for(var i=0;i<allA.length;i++){
+						allA[i].style.backgroundColor="";
+					}
+					//将选中的a 设置为黑色
+					allA[index].style.backgroundColor="#000000";
+				}; */
+				function setA(){
+					if(index>=imgArr.length-1){
+						//将index设为0
+						index=0;
+						
+						//此时显示的是最后一张图片,而最后一张图片和第一张一模一样
+						//通过css将最后一张切换成第一张
+						imgList.style.left=0;
+					}
+					for(var i=0;i<allA.length;i++){
+						allA[i].style.backgroundColor="";
+					}
+					//将选中的a 设置为黑色
+					allA[index].style.backgroundColor="orange";
+				};
+				
+				//定义自动切换定时器的标识
+				var timer;
+				//创建一个函数,用来开启自动切换图片
+				function autoChange(){
+					//开启一个定时器,用于定时切换图片
+					timer=setInterval(function(){
+						
+						//使索引自增
+						index++;
+						
+						//判断index值
+						index %=imgArr.length;
+						
+						//执行动画切换图片
+						move(imgList,"left",-660*index,20,function(){
+							//设置导航按钮
+							setA();
+						});
+						
+					},2000);
+				}
+			};
+			
+		</script>
+		<!-- 引入工具file:///E:/HBuilder/定时调用/tools.js -->
+		<script type="text/javascript" src="js/tools.js"></script>
+
+</head>
+<body>
+<div>
+<h1>欢迎来到zym餐饮公司</h1>
+<!-- <img src="logo/zym餐饮店.png"/> -->
+
+</div>
+<div class="trip" id="nav">
+			<ul class="nav">
+				<li><a href="about.html"><img src="logo/关于我们.png"><br>关于我们</a></li>
+				<li><a href="new.html"><img src="logo/新品.png"><br>新品上市</a></li>
+				<li><a href="health.html"><img src="logo/健康.png"><br>饮食健康</a></li>
+				<li><a href="order.html"><img src="logo/点餐.png"><br>开始点餐</a></li>
+				<li><a href="login.jsp"><img src="logo/会员.png"><br>会员专区</a>
+				<ul id="submenu">
+                    <li><a href="login.jsp">登录</a></li>
+                    <li><a href="vip.html">注册</a></li>
+                </ul>
+				</li>
+				<li><a href="adminlogin.jsp"><img src="logo/管理员.png"><br>管理员登录</a></li>
+				<li><a href="content.html"><img src="logo/留言.png"><br>留言板</a></li>
+			</ul>
+		</div>
+      <div>
+		    <input type="text" name="search" placeholder="菜品搜索">
+		    <div id="search">搜索</div> 
+	  </div>
+      <div id="outer">
+		<!-- 创建一个ul，用于放置图片 -->
+			<ul id="imgList">
+				<li><img src="logo/img/1.jpg" ></li>
+				<li><img src="logo/img/2.jpg" ></li>
+				<li><img src="logo/img/3.jpg"></li>
+				<li><img src="logo/img/4.jpg" ></li>
+				<li><img src="logo/img/5.jpg" ></li>
+				<li><img src="logo/img/1.jpg" ></li>
+			</ul>
+		</div>
+			<!-- 创建导航按钮 -->
+			<div id="navDiv">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		<div class="toplist">
+			<span>热销菜品</span>|<span>Top6</span>
+			 <img src="logo/热销.png" >
+		</div>
+		<ul class="hot">
+		    <li> 
+				<img src="logo/小龙虾.jpg" align="bottom" >
+				<p>麻辣小龙虾</p><center>销售价：￥99</center>
+			</li>
+			<li> 
+				<img src="logo/养生鸡汤.jpg" align="bottom" >
+				<p>养生鸡汤</p><center>销售价：￥28</center>
+			</li>
+			<li>
+				<img src="logo/宫保鸡丁.jpg" align="bottom">
+				<p>宫保鸡丁</p>
+				<center>销售价：￥38</center>
+			</li>
+			<li>
+				<img src="logo/麻婆豆腐.jpg" align="bottom">
+				<p>麻婆豆腐</p>
+				<center>销售价：￥20</center>
+			</li>
+			<li>
+                <img src="logo/面包的诱惑.jpg" align="bottom" >
+				<p>面包的诱惑</p><center>销售价：￥15</center>
+				</li>
+			<li> 
+				<img src="logo/糖醋排骨.jpg" align="bottom" >
+				<p>糖醋排骨</p><center>销售价：32</center>
+			</li>
+		</ul>
+		<div class="dztj">
+			<span>特色菜</span>|<span></span>
+			 <img src="logo/推荐.png" >
+		</div>
+		<div class="tuijian">
+		<ul class="hot">
+		    <li> 
+				<img src="logo/小龙虾.jpg" align="bottom" >
+				<p>麻辣小龙虾</p><center>销售价：￥99</center>
+			</li>
+			<li> 
+				<img src="logo/蛋卷.jpg" align="bottom" >
+				<p>如意紫菜蛋卷</p><center>销售价：￥15</center>
+			</li>
+			<li>
+				<img src="logo/黄鱼.jpg" align="bottom">
+				<p>春笋咸肉鲜蒸黄鱼</p>
+				<center>销售价：￥48</center>
+			</li>
+			<li>
+				<img src="logo/乌米饭.jpg" align="bottom">
+				<p>乌米饭</p>
+				<center>销售价：￥20</center>
+			</li>
+			<li>
+                <img src="logo/面包的诱惑.jpg" align="bottom" >
+				<p>面包的诱惑</p><center>销售价：￥15</center>
+				</li>
+			<li> 
+				<img src="logo/三文鱼薯片沙拉.jpg" align="bottom" >
+				<p>三文鱼薯片沙拉</p><center>销售价：￥32</center>
+			</li>
+			<li> 
+				<img src="logo/蛋糕甜品/酸奶天使蛋糕.jpg" align="bottom" >
+				<p>酸奶天使蛋糕</p><center>销售价：￥15</center>
+			</li>
+		</ul>
+		</div>
+		<div class="back"  style="background:url(logo/舌尖.jpg) no-repeat left top;">
+			<ul>
+				<li>
+					<font size="5" color="white">
+					联系电话：0857-86843589<br>
+					email：2893094@qq.com<br>
+					营业时间:<br>
+				    上午：9.00am<br>
+				    下午：10.00pm<br>
+				    地址：浙江省杭州市江干区金沙大道560号<br>
+				    可乘地铁1号线在金沙湖站下车<br>
+				  祝您用餐愉快
+				   </font>
+				</li>
+				<li>
+				<a href="map.html">
+					<dl>
+						<dt><img alt="地图" src="logo/地图.png"></dt>
+						<dd>地图</dd>
+					</dl>
+				</a>
+			</li>
+			</ul>
+		</div>
+
+
+</body>
+</html>

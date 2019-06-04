@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>zym餐饮公司</title>
+		<style type="text/css">
+		    li {
+			float: left;
+			display: inline;
+			margin: 5px;
+			}
+		 img{
+			width: 200px;
+			height: 124px;
+		}
+		input{
+			width: 25px;
+		}
+		#fanhui img{
+			width: 30px;
+			height: 30px;
+		}
+		
+		</style>
+
+<script type="text/javascript">
+	window.onload=function(){
+		var oBtns=document.getElementsByTagName("button");
+		var inputs=document.getElementsByTagName("input");
+		for(var i=0;i<oBtns.length;i++){
+			for(var j=0;j<inputs.length;j++){
+				;(function(i){
+			    if (i%3==0) {//button对应0，3，6，9；input对应0,1,2,3
+				//触发一个加1函数
+				oBtns[i].onclick=function(){
+					inputs[i/3].value=parseInt(inputs[i/3].value)+1;
+					
+					}
+					}else if(i%3==1){//button对应1，4，7，10；input对应0,1,2,3
+						oBtns[i].onclick=function(){	
+							inputs[(i-1)/3].value=parseInt(inputs[(i-1)/3].value)-1;
+							}
+							
+					}
+					})(i);
+					}
+					
+					}
+	}
+</script>
+
+		
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>
+					<img src="logo/冷菜/三文鱼薯片沙拉.jpg" align="bottom" >
+				<center>三文鱼薯片沙拉</center><center>销售价：￥32</center>
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/冷菜/凉拌裙带菜.jpg" align="bottom" >
+				<center>凉拌裙带菜</center><center>销售价：￥12</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/冷菜/夏至凉面.jpg" align="bottom" >
+				<center>夏至凉面</center><center>销售价：￥15</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/冷菜/越南菜丝沙拉.jpg" align="bottom" >
+				<center>越南菜丝沙拉</center><center>销售价：￥22</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/冷菜/酸辣鸡爪.jpg" align="bottom" >
+				<center>酸辣鸡爪</center><center>销售价：￥20</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>	
+				<li>
+					<img src="logo/热菜/叉烧鳗鱼.jpg" align="bottom" >
+				<center>叉烧鳗鱼</center><center>销售价：￥58</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/咸蛋酿冬瓜.jpg" align="bottom" >
+				<center>咸蛋酿冬瓜</center><center>销售价：￥25</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/宫保鸡丁.jpg" align="bottom" >
+				<center>宫保鸡丁</center><center>销售价：￥38</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/小龙虾.jpg" align="bottom" >
+				<center>麻辣小龙虾</center><center>销售价：￥99</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/糖醋排骨.jpg" align="bottom" >
+				<center>糖醋排骨</center><center>销售价：￥32</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/红烧猪蹄.jpg" align="bottom" >
+				<center>红烧猪蹄</center><center>销售价：￥39</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/罗汉大虾.jpg" align="bottom" >
+				<center>罗汉大虾</center><center>销售价：￥39</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/麻婆豆腐.jpg" align="bottom" >
+				<center>麻婆豆腐</center><center>销售价：￥20</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/黄鱼.jpg" align="bottom" >
+				<center>春笋咸肉鲜蒸黄鱼</center><center>销售价：￥48</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+				<li>
+					<img src="logo/热菜/黑椒牛排.jpg" align="bottom" >
+				<center>黑椒牛排</center><center>销售价：￥48</center> 
+				数量
+				<button type="button">+</button>
+				<input id="zhi" type="text" value="0">
+				<button type="button">-</button>
+				<button type="button">加入购物车</button>
+				</li>
+			<li>
+				<img src="logo/汤/养生鸡汤.jpg" align="bottom" >
+			<center>养生鸡汤</center><center>销售价：￥28</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/汤/奶油蘑菇汤.jpg" align="bottom" >
+			<center>奶油蘑菇汤</center><center>销售价：￥22</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/汤/山药豆腐汤.jpg" align="bottom" >
+			<center>山药豆腐汤</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/汤/枸杞鱼片汤.jpg" align="bottom" >
+			<center>枸杞鱼片汤</center><center>销售价：￥25</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/汤/芋圆红豆汤.jpg" align="bottom" >
+			<center>芋圆红豆汤</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/汤/莲藕排骨汤.jpg" align="bottom" >
+			<center>莲藕排骨汤</center><center>销售价：￥28</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/荔枝奶酪慕斯.jpg" align="bottom" >
+			<center>荔枝奶酪慕斯</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/梦龙蛋糕卷.jpg" align="bottom" >
+			<center>梦龙蛋糕卷</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/面包的诱惑.jpg" align="bottom" >
+			<center>面包的诱惑</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/如意紫菜蛋卷.jpg" align="bottom" >
+			<center>如意紫菜蛋卷</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/酥皮奶油泡芙.jpg" align="bottom" >
+			<center>酥皮奶油泡芙</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/蛋糕甜品/酸奶天使蛋糕.jpg" align="bottom" >
+			<center>酸奶天使蛋糕</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/乌米饭.jpg" align="bottom" >
+			<center>乌米饭</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/什锦焖饭.jpg" align="bottom" >
+			<center>什锦焖饭</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/土豆焖饭.jpg" align="bottom" >
+			<center>土豆焖饭</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/奶香玉米窝窝头.jpg" align="bottom" >
+			<center>奶香玉米窝窝头</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/珍珠丸子.jpg" align="bottom" >
+			<center>珍珠丸子</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/主食/西葫芦锅贴.jpg" align="bottom" >
+			<center>西葫芦锅贴</center><center>销售价：￥20</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/饮品/柠檬蜂蜜红茶.jpg" align="bottom" >
+			<center>柠檬蜂蜜红茶</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/饮品/清甜芝香南瓜粥.jpg" align="bottom" >
+			<center>清甜芝香南瓜粥</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/饮品/百香果蜂蜜红茶.jpg" align="bottom" >
+			<center>百香果蜂蜜红茶</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/饮品/皇家奶茶.jpg" align="bottom" >
+			<center>皇家奶茶</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li>
+				<img src="logo/饮品/金桔蜜.jpg" align="bottom" >
+			<center>莲金桔蜜</center><center>销售价：￥15</center> 
+			数量
+			<button type="button">+</button>
+			<input id="zhi" type="text" value="0">
+			<button type="button">-</button>
+			<button type="button">加入购物车</button>
+			</li>
+			<li id="fanhui">
+				<br>
+				<br><br>
+				<a href="index.html"><img src="logo/返回.png" align="bottom" >
+			    返回首页</a>
+			</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
